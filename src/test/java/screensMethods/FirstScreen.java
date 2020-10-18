@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 public class FirstScreen extends BaseClass {
 
     By firstTextId = By.id("textview_first");
+    By nextButton = By.id("button_first");
     AndroidDriver driver;
 
     public FirstScreen(AndroidDriver driver) {
@@ -19,9 +20,11 @@ public class FirstScreen extends BaseClass {
         } else {
             System.out.println("false");
         }
-
     }
 
-
+    public SecondScreen clickFirstButton() {
+        methods.click(nextButton);
+        return new SecondScreen(driver);
+    }
 
 }
